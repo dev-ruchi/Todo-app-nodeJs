@@ -1,7 +1,24 @@
-function factorial(number) {
-  if (number === 0 || number === 1) return 1
+class Player {
+  health = 100
 
-  return factorial(number - 1) * number
+  move() {
+    console.log("Player has moved")
+  }
 }
 
-console.log("Factorial of 5 is: " + factorial(5));
+
+class Paul extends Player {
+  backFlip() {
+    console.log("Paul did a back flip")
+  }
+}
+
+class Yoshimitshu extends Player {
+  moveSward() {
+    console.log("Yoshi moved the sword")
+  }
+}
+
+const paul = new Paul()
+paul.move()
+paul.backFlip()
