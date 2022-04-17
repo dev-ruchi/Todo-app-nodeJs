@@ -24,6 +24,14 @@ app.get('/todos', async (req, res) => {
   return res.json(await Todo.find().exec())
 })
 
+app.put('/todos/:id', async (req, res) => {
+  await Todo.findByIdAndUpdate(req.params.id, req.body).exec()
+
+  return res.json({
+    message: "Todo updated successfully"
+  })
+})
+
 app.delete('/todos/:id', async (req, res) => {
   await Todo.findByIdAndDelete(req.params.id).exec()
 
